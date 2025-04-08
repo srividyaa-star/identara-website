@@ -421,9 +421,7 @@ footer {
 /* Small devices (phones, less than 600px) */
 @media (max-width: 600px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
+    display: none;
   }
   .nav-links {
     flex-direction: column;
@@ -450,6 +448,9 @@ footer {
 
 /* Medium devices (tablets, less than 900px) */
 @media (max-width: 900px) {
+  .navbar {
+    display: none;
+  }
   .skills-grid, .services-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }

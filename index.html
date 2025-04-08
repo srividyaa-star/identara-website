@@ -208,7 +208,7 @@
 
     <!-- FOOTER -->
     <footer>
-      <p>&copy; 2025 Identara | Identity & Access Management Solutions</p>
+      <p>Made By Vidyaa Ganesh | &copy; 2025 Identara | Identity & Access Management Solutions </p>
     </footer>
   </div>
 
@@ -233,6 +233,19 @@
     window.onload = function () {
       const navbar = document.querySelector('.navbar');
       const backToTop = document.querySelector('.back-to-top');
+         // 🛠 LOGO ANIMATION START
+      const logo = document.querySelector('.logo');
+      if (logo) {
+        logo.style.transform = 'scale(0.8) rotate(0deg)';
+        logo.style.opacity = '0';
+        logo.style.transition = 'transform 1.2s ease, opacity 1.2s ease';
+
+      setTimeout(() => {
+        logo.style.transform = 'scale(1) rotate(0deg)';
+        logo.style.opacity = '1';
+      }, 300);
+    }
+  // 🛠 LOGO ANIMATION END
 
       window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
@@ -254,7 +267,11 @@
       });
     };
   </script>
-
+    <div id="shield-progress">
+      <div class="shield-icon">🛡️</div>
+      <div class="shield-text">Protection: <span id="shield-percentage">0%</span></div>
+    </div>
+    
 </body>
 
 </html>

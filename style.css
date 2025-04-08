@@ -90,7 +90,7 @@ html {
     min-height: 100vh;
     background: url('/images/hero-bg.jpg') no-repeat center center/cover;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     text-align: center;
     padding: 6rem 2rem;
@@ -142,27 +142,51 @@ html {
   }
   
   /* About Section */
-  .about-hero {
-    background: url('/images/about-bg.jpg') no-repeat center center/cover;
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  .about-overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    color: #fff;
-  }
-  
-  .sub-text {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-  }
+.about-hero {
+  background: url('/images/about-bg.jpg') no-repeat center center/cover;
+  min-height: 70vh; /* Slightly taller for better impact */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Stack heading + content vertically */
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.about-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3rem 2rem;
+  border-radius: 15px; /* Slightly more modern curve */
+  max-width: 1000px;
+  width: 90%;
+  color: #ffffff;
+}
+
+.about-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.sub-text {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #cccccc; /* Softer tone for subheading */
+}
+
+.about-content {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #dddddd; /* Light gray for better readability */
+  line-height: 1.8;
+}
+
+.about-content p {
+  margin-bottom: 1.8rem; /* More breathing room between paragraphs */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* Slight glow for clarity */
+}
+
   
   /* Highlight Card for "What I Do" */
   .highlight-card {
@@ -195,35 +219,47 @@ html {
   }
   
   
-  /* Journey Cards */
-  .journey-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
-  }
-  
-  .journey-card {
-    background: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 2rem;
-    border-radius: 15px;
-    color: #ffffff;
-    backdrop-filter: blur(8px);
-    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
-    text-align: left;
-  }
-  
-  .journey-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    background: rgba(0, 119, 204, 0.8);
-    box-shadow: 0 10px 25px rgba(0, 119, 204, 0.4);
-  }
+ /* Journey Cards */
+.journey-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.journey-card {
+  background: rgba(30, 30, 30, 0.8); /* <-- updated to light translucent background */
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+  text-align: left;
+}
+
+.journey-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(88, 120, 207, 0.8);
+  box-shadow: 0 10px 25px rgba(121, 98, 215, 0.4);
+}
+
+.badge {
+  background-color: #4CAF50; /* green */
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
   
   /* Skills Section */
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
     gap: 2rem;
     margin-top: 2rem;
   }
@@ -249,61 +285,76 @@ html {
   }
   
   .cert-badge {
-    width: 150px;
+    width: 250px;
     margin: 10px;
   }
   
 
   
-  /* Services Section */
-  .services-hero {
-    position: relative;
-    min-height: 100vh;
-    background: url('/images/services-bg.jpg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 6rem 2rem;
-  }
-  
-  .services-overlay {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 2rem;
-    border-radius: 10px;
-  }
-  
-  .services-overlay h1 {
-    color: #ffffff;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-  }  
-  
-  .services-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .service-card {
-    flex: 1 1 20%;
-    max-width: 300px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 2rem;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    color: white;
-    min-height: 250px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 119, 204, 0.4);
-  }
+ /* Services Section */
+.services-hero {
+  position: relative;
+  min-height: 100vh;
+  background: url('/images/services-bg.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.services-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  max-width: 1200px; /* <-- make overlay a bit wider */
+  width: 100%;
+}
+
+.services-overlay h1 {
+  color: #ffffff;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.services-overlay p {
+  color: #cccccc;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* <-- switch to grid for perfect card layout */
+  gap: 2.5rem;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  min-height: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 119, 204, 0.4);
+}
+
+
   
   /* Contact Form */
   .contact-form {
@@ -361,4 +412,20 @@ html {
       padding: 2rem 1rem;
     }
   }
-  
+  /* LinkedIn Icon in Navbar */
+.linkedin-icon {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.linkedin-logo {
+  height: 28px;
+  width: 28px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.linkedin-logo:hover {
+  transform: translateY(-3px) scale(1.1);
+  filter: brightness(1.2) saturate(1.2);
+}

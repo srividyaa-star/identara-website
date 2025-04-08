@@ -430,7 +430,8 @@ footer {
     margin-top: 1rem;
   }
   .brand {
-    margin: 0 auto;
+    margin: 0;
+    justify-content: flex-start;
   }
   .hero h1 {
     font-size: 2rem;
@@ -455,7 +456,8 @@ footer {
     display: none;
   }
   .brand {
-    margin: 0 auto;
+    margin: 0;
+    justify-content: flex-start;
   }
   .skills-grid, .services-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

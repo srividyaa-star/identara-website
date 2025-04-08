@@ -24,14 +24,24 @@ html {
   }
   
   .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.5rem 2rem;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border-bottom: 1px solid #eaeaea;
+    background: transparent;
+    backdrop-filter: blur(2px); /* NEW - subtle blur always */
+    transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
   }
+  
+  .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px); /* stronger blur on scroll */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
   
   .brand {
     display: flex;
@@ -90,7 +100,7 @@ html {
     min-height: 100vh;
     background: url('/images/hero-bg.jpg') no-repeat center center/cover;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     text-align: center;
     padding: 6rem 2rem;
@@ -144,7 +154,7 @@ html {
   /* About Section */
 .about-hero {
   background: url('/images/about-bg.jpg') no-repeat center center/cover;
-  min-height: 70vh; /* Slightly taller for better impact */
+  min-height: 80vh; /* Slightly taller for better impact */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,44 +189,58 @@ html {
   margin-top: 2rem;
   font-size: 1.1rem;
   color: #dddddd; /* Light gray for better readability */
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 .about-content p {
   margin-bottom: 1.8rem; /* More breathing room between paragraphs */
   text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* Slight glow for clarity */
 }
+.about-bullets {
+  list-style-type: disc; /* normal bullets */
+  text-align: left;
+  margin: 2rem auto 0 auto;
+  max-width: 800px;
+  padding-left: 1.5rem;
+  color: #ddd;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.about-bullets li {
+  margin-bottom: 1.5rem; /* spacing between each bullet */
+}
 
   
   /* Highlight Card for "What I Do" */
-  .highlight-card {
-    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
-    border: none;
-    padding: 3rem 2rem;
-    border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(0, 119, 204, 0.15);
-    max-width: 900px;
-    margin: 3rem auto;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+.highlight-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+  border: none;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 119, 204, 0.15);
+  max-width: 900px;
+  margin: 3rem auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
   
-  .highlight-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 119, 204, 0.25);
-  }
+.highlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 119, 204, 0.25);
+}
   
-  .highlight-card h2 {
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    color: #0077cc;
-  }
+.highlight-card h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #0077cc;
+}
   
-  .highlight-card p {
-    font-size: 1.1rem;
-    color: #333;
-    line-height: 1.6;
-  }
+.highlight-card p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+}
   
   
  /* Journey Cards */
@@ -230,7 +254,8 @@ html {
 .journey-card {
   background: rgba(30, 30, 30, 0.8); /* <-- updated to light translucent background */
   border: 1px solid rgba(255,255,255,0.1);
-  padding: 2rem;
+  padding: 2.5rem;
+  line-height: 1.7;
   border-radius: 15px;
   color: #ffffff;
   backdrop-filter: blur(8px);
@@ -257,37 +282,38 @@ html {
 
   
   /* Skills Section */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
   
-  .skill-box {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+.skill-box {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 2.5rem;
+  line-height: 1.8;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
   
-  .skill-box:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
+.skill-box:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
   
   /* Certifications */
-  .certifications {
-    text-align: center;
-    margin: 4rem 0;
-  }
+.certifications {
+  text-align: center;
+  margin: 4rem 0;
+}
   
-  .cert-badge {
-    width: 250px;
-    margin: 10px;
-  }
+.cert-badge {
+  width: 250px;
+  margin: 10px;
+}
   
 
   
@@ -357,63 +383,82 @@ html {
 
   
   /* Contact Form */
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
-    gap: 1rem;
-  }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  gap: 1rem;
+}
   
-  .contact-form input,
-  .contact-form textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
   
   /* Footer */
-  footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: #ffffff;
-    font-size: 0.9rem;
-  }
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+}
   
   /* Thank You Section */
-  #thankyou {
-    text-align: center;
-    margin: 4rem 0;
-  }
+#thankyou {
+  text-align: center;
+  margin: 4rem 0;
+}
   
-  #thankyou h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
+#thankyou h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
   
   /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .nav-links {
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-    .hero p {
-      font-size: 1rem;
-    }
-    .content {
-      padding: 2rem 1rem;
-    }
+/* Small devices (phones, less than 600px) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
   }
-  /* LinkedIn Icon in Navbar */
-./* LinkedIn Icon in Navbar */
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .about-overlay {
+    padding: 2rem 1rem;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr; /* Stack skills vertically */
+  }
+  .services-grid {
+    grid-template-columns: 1fr; /* Stack services vertically */
+  }
+}
+
+/* Medium devices (tablets, less than 900px) */
+@media (max-width: 900px) {
+  .skills-grid, .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .journey-cards {
+    grid-template-columns: 1fr; /* Stack journey cards on tablet */
+  }
+}
+
+/* LinkedIn Icon in Navbar */
 .linkedin-icon {
   margin-left: 2rem;
   display: flex;
@@ -431,4 +476,33 @@ html {
   transform: translateY(-3px) scale(1.1);
   filter: brightness(1.2) saturate(1.2);
 }
+.cta-subtext {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #414344;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(97, 93, 93, 0.3);
+  transition: background 0.3s, transform 0.3s;
+  z-index: 1000;
+}
 
+.back-to-top:hover {
+  background: #40658a;
+  transform: translateY(-3px);
+}

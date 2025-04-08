@@ -420,7 +420,7 @@ footer {
   /* Responsive Adjustments */
 /* Small devices (phones, less than 600px) */
 @media (max-width: 600px) {
-  .navbar {
+  .nav-links {
     display: none;
   }
   .nav-links {
@@ -448,7 +448,7 @@ footer {
 
 /* Medium devices (tablets, less than 900px) */
 @media (max-width: 900px) {
-  .navbar {
+  .nav-links {
     display: none;
   }
   .skills-grid, .services-grid {

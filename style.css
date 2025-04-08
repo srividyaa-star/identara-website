@@ -413,6 +413,7 @@ html {
     }
   }
   /* LinkedIn Icon in Navbar */
+./* LinkedIn Icon in Navbar */
 .linkedin-icon {
   margin-left: 2rem;
   display: flex;
@@ -420,8 +421,9 @@ html {
 }
 
 .linkedin-logo {
-  height: 28px;
-  width: 28px;
+  height: 28px; /* control the icon size here */
+  width: auto;  /* maintain aspect ratio */
+  max-width: 28px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -429,3 +431,4 @@ html {
   transform: translateY(-3px) scale(1.1);
   filter: brightness(1.2) saturate(1.2);
 }
+

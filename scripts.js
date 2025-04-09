@@ -273,3 +273,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const ctaButtons = document.querySelectorAll('.btn-primary');
+
+  ctaButtons.forEach(button => {
+    button.classList.add('pulse');
+  });
+});

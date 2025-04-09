@@ -434,9 +434,11 @@
           }
 
           if (window.scrollY > 300) {
-            backToTop.style.display = "block";
+            backToTop.classList.add("active");
+            backToTop.classList.add("pulse");
           } else {
-            backToTop.style.display = "none";
+            backToTop.classList.remove("active");
+            backToTop.classList.remove("pulse");
           }
         });
 

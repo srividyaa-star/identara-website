@@ -497,23 +497,49 @@ text-align: center;
 }
 /* Back to Top Button */
 .back-to-top {
-position: fixed;
-bottom: 30px;
-right: 30px;
-background: #414344;
-color: white;
-font-size: 2rem;
-padding: 0.5rem 0.8rem;
-border-radius: 50%;
-text-decoration: none;
-box-shadow: 0 4px 10px rgba(97, 93, 93, 0.3);
-transition: background 0.3s, transform 0.3s;
-z-index: 1000;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #414344;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(97, 93, 93, 0.3);
+  transition: all 0.4s ease;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(50px); /* Initially down */
+  pointer-events: none; /* Prevent clicks until visible */
+}
+.back-to-top.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+@keyframes softPulse {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 119, 204, 0.6);
+  }
+  50% {
+    transform: translateY(0) scale(1.05);
+    box-shadow: 0 0 0 12px rgba(0, 119, 204, 0);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 119, 204, 0);
+  }
 }
 
+.back-to-top.pulse {
+  animation: softPulse 4s infinite;
+}
 .back-to-top:hover {
-background: #40658a;
-transform: translateY(-3px);
+  background: #40658a;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 119, 204, 0.6);
 }
 #shield-progress {
   position: fixed;
@@ -542,4 +568,22 @@ transform: translateY(-3px);
 #shield-progress.hide {
   opacity: 0;
   pointer-events: none;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 119, 204, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(0, 119, 204, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 119, 204, 0);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
 }

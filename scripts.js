@@ -260,3 +260,16 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('scroll', updateShieldProgress);
   updateShieldProgress(); // initialize
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.nav-links li a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      link.style.textShadow = '0 0 8px #0077cc, 0 0 12px #0077cc';
+    });
+
+    link.addEventListener('mouseleave', () => {
+      link.style.textShadow = 'none';
+    });
+  });
+});

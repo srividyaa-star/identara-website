@@ -70,7 +70,7 @@ header {
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: text-shadow 0.3s ease;
 }
 
 .nav-links li a.active,
@@ -256,7 +256,7 @@ background: rgba(30, 30, 30, 0.8); /* <-- updated to light translucent backgroun
 border: 1px solid rgba(255,255,255,0.1);
 padding: 2.5rem;
 line-height: 1.7;
-border-radius: 15px;
+border-radius: 8px;
 color: #ffffff;
 backdrop-filter: blur(8px);
 transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
@@ -265,7 +265,7 @@ text-align: left;
 
 .journey-card:hover {
 transform: translateY(-10px) scale(1.02);
-background: rgba(88, 120, 207, 0.8);
+background: rgba(0, 119, 204, 0.7);
 box-shadow: 0 10px 25px rgba(121, 98, 215, 0.4);
 }
 
@@ -293,9 +293,9 @@ margin-top: 2rem;
 background: #ffffff;
 border: 1px solid #ddd;
 padding: 2.5rem;
-line-height: 1.8;
+line-height: 1.7;
 border-radius: 10px;
-text-align: center;
+text-align: left;
 transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -311,7 +311,7 @@ margin: 4rem 0;
 }
 
 .cert-badge {
-width: 250px;
+width: 210px;
 margin: 10px;
 }
 
@@ -333,7 +333,7 @@ padding: 6rem 2rem;
 .services-overlay {
 background: rgba(0, 0, 0, 0.5);
 padding: 3rem 2rem;
-border-radius: 15px;
+border-radius: 8px;
 max-width: 1200px; /* <-- make overlay a bit wider */
 width: 100%;
 }
@@ -364,7 +364,7 @@ width: 100%;
 background: rgba(255, 255, 255, 0.08);
 border: 1px solid rgba(255, 255, 255, 0.15);
 padding: 2rem;
-border-radius: 15px;
+border-radius: 8px;
 backdrop-filter: blur(10px);
 color: #ffffff;
 min-height: 280px;

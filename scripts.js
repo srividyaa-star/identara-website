@@ -280,3 +280,4 @@ document.addEventListener('DOMContentLoaded', function() {
     button.classList.add('pulse');
   });
 });
+

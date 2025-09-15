@@ -667,3 +667,14 @@ text-align: center;
   border-top: 1px solid #e0e0e0;
   margin: 3rem 0;
 }
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ebe9e9;
+}
+
+main {
+  flex: 1;
+}
+  
